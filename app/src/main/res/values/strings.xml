@@ -15,5 +15,14 @@
     <string name="txt_initial_load">¿Realizar carga inicial?</string>
     <string name="txt_initial_credit">Credito inicial</string>
     <string name="txt_acept_tnc">Acepto los terminos y condiciones</string>
-    <string name="btn_register">Registrar</string>
+    <string name="btn_register">Registrar</string>.
+    <string name="err_email">Introduzca un email válido</string>
+    <string name="err_pass">La contraseña debe tener entre 4 y 15 caracteres</string>
+    <string name="err_repeat_pass">Las contraseñas deben ser iguales</string>
+    <string name="err_type_card">Elija un tipo de tarjeta</string>
+    <string name="err_num_card">Número de tarjeta incorrecto</string>
+    <string name="err_ccv">CCV incorrecto</string>
+    <string name="err_due_card">Vencimiento debe superar los 3 meses</string>
+    <string name="err_init_credit">La carga debe ser mayor a cero</string>
+    <string name="msg_registered">Registrado con exitos!!</string>
 </resources>
