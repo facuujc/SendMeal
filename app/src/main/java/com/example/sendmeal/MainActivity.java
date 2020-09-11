@@ -191,12 +191,13 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean validateEmail(String email) {
         for (int i = 0; i < email.length(); i++)
-            if (email.charAt(i) == '@')
-                if (Character.isLetter(email.charAt(i + 1))
+            if (email.charAt(i) == '@') {
+                if (email.length() - i > 3 && Character.isLetter(email.charAt(i + 1))
                         && Character.isLetter(email.charAt(i + 2))
                         && Character.isLetter(email.charAt(i + 3)))
                     return true;
                 else return false;
+            }
         return false;
     }
 
