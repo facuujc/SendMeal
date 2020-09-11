@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     cuentaBancaria = new CuentaBancaria(editTxt_cbu.getText().toString(), editTxt_aliasCbu.getText().toString());
                     tarjeta = new Tarjeta(editTxt_numCard.getText().toString(), editTxt_ccv.getText().toString(), dueDate, rBtn_credit.isSelected());
-                    usuario = new Usuario(hashCode(), //TODO
+                    usuario = new Usuario(hashCode(),
                             editTxt_name.getText().toString(),
                             editTxt_pass.getText().toString(),
                             editTxt_email.getText().toString(),
