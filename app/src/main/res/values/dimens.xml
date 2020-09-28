@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="txt_32sp">32sp</dimen>
+    <dimen name="txt_24sp">24sp</dimen>
+    <dimen name="txt_18sp">18sp</dimen>
+</resources>

@@ -1,10 +1,14 @@
 package com.example.sendmeal;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
-import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -30,7 +34,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class SingInActivity extends AppCompatActivity {
 
     EditText editTxt_name;
     EditText editTxt_pass;
@@ -50,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     CheckBox checkBox_tnc;
     SeekBar seekBar;
     Button btn_register;
+    Toolbar toolbar;
 
     Double initialCredit;
 
@@ -60,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sing_in);
 
         editTxt_name = (EditText) findViewById(R.id.editText_name);
         editTxt_pass = (EditText) findViewById(R.id.editText_pass);
@@ -78,8 +83,11 @@ public class MainActivity extends AppCompatActivity {
         checkBox_tnc = (CheckBox) findViewById(R.id.checkBox_tnc);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         btn_register = (Button) findViewById(R.id.btn_register);
+        toolbar = (Toolbar) findViewById(R.id.toolbar_createItem);
+        setSupportActionBar(toolbar);
 
         initialCredit = 0.0;
+
 
         //load spinner month
         List<Integer> monthsSpinner = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
@@ -184,9 +192,25 @@ public class MainActivity extends AppCompatActivity {
                             tarjeta,
                             cuentaBancaria);
                 }
-                Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+                Toast.makeText(SingInActivity.this, message, Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_go_back, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.item_goBack:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private boolean validateEmail(String email) {

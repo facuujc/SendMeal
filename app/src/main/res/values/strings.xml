@@ -25,4 +25,16 @@
     <string name="err_due_card">Vencimiento debe superar los 3 meses</string>
     <string name="err_init_credit">La carga debe ser mayor a cero</string>
     <string name="msg_registered">Registrado con exitos!!</string>
+    <string name="msg_welcome">Bienvenido!!!</string>
+    <string name="txt_sing_in">Registrarme</string>
+    <string name="txt_create_item">Crear Item</string>
+    <string name="txt_item_list">Lista de items</string>
+    <string name="txt_go_back">Atrás</string>
+    <string name="txt_new_item">Nuevo Plato</string>
+    <string name="txt_title">Título</string>
+    <string name="txt_description">Descripción</string>
+    <string name="txt_price">Precio</string>
+    <string name="txt_calories">Calorías</string>
+    <string name="txt_save">Guardar</string>
+    <string name="msg_item_created">El plato fue creado</string>
 </resources>

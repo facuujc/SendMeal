@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    tools:context=".MainActivity">
+    tools:context=".SingInActivity">
+
+    <include
+        android:id="@+id/toolbar_singIn"
+        layout="@layout/tool_bar" />
 
     <EditText
         android:id="@+id/editText_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/txt_name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editText_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/txt_password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editText_pass_repeat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/txt_repeat_password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editText_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/txt_email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView_cardType"
@@ -78,19 +79,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:ems="10"
             android:hint="@string/txt_card_number"
-            android:inputType="number" />
+            android:inputType="number"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/editText_ccv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10"
             android:enabled="false"
             android:hint="@string/txt_ccv"
-            android:inputType="textNoSuggestions|number" />
+            android:inputType="textNoSuggestions|number"
+            android:autofillHints="" />
 
     </LinearLayout>
 
@@ -122,17 +123,17 @@
         android:id="@+id/editText_cbu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/txt_cbu"
-        android:inputType="number" />
+        android:inputType="number"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editText_aliasCbu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/txt_alias_cbu"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:autofillHints="" />
 
     <Switch
         android:id="@+id/switch_initCredit"
