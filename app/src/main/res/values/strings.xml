@@ -37,4 +37,5 @@
     <string name="txt_calories">Calorías</string>
     <string name="txt_save">Guardar</string>
     <string name="msg_item_created">El plato fue creado</string>
+    <string name="txt_view">Ver</string>
 </resources>

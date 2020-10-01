@@ -6,4 +6,5 @@
     <color name="colorPrimary">#590004</color>
     <color name="colorPrimaryDark">#250001</color>
     <color name="colorAccent">#A50104</color>
+    <color name="colorTransparent">#EB8F8F</color>
 </resources>

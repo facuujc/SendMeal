@@ -14,7 +14,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private static final int CODE_SING_IN = 101;
     private static final int CODE_CREATE_ITEM = 102;
-    private static final int CODE_LIST_ITEM = 103;
+    private static final int CODE_ITEM_LIST = 103;
 
     Toolbar toolbar;
 
@@ -45,7 +45,8 @@ public class HomeActivity extends AppCompatActivity {
                startActivityForResult(intent_CreateItem, CODE_CREATE_ITEM);
                 break;
             case R.id.item_itemList:
-                Toast.makeText(this, "Lista de items", Toast.LENGTH_LONG).show();
+                Intent intent_ItemList = new Intent(this, ItemListActivity.class);
+                startActivityForResult(intent_ItemList, CODE_ITEM_LIST);
                 break;
         }
         return super.onOptionsItemSelected(item);

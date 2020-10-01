@@ -111,7 +111,8 @@ public class CreateItemActivity extends AppCompatActivity {
                         editText_title.getText().toString(),
                         editText_description.getText().toString(),
                         Double.parseDouble(editText_price.getText().toString()),
-                        Integer.parseInt(editText_calories.getText().toString()));
+                        Integer.parseInt(editText_calories.getText().toString()),
+                        "");
 
                 Toast.makeText(CreateItemActivity.this, getString(R.string.msg_item_created), Toast.LENGTH_LONG).show();
             }
