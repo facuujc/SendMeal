@@ -2,6 +2,7 @@ package com.example.sendmeal.adapters;
 
 import android.app.Activity;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +20,6 @@ import java.util.List;
 
 public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapter.ItemViewHolder> {
 
-    private static final String _path_imgs = "../../../../../res/drawable/";
-
     private List<Item> items;
     private AppCompatActivity activity;
 
@@ -34,12 +33,23 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
         ImageView imageView;
         TextView textView_price;
         TextView textView_link;
+        TextView textView_imgTitle;
 
         public ItemViewHolder(View v) {
             super(v);
-            card = (CardView)v.findViewById(R.id.card_item);
+            card = (CardView) v.findViewById(R.id.card_item);
             imageView = (ImageView) v.findViewById(R.id.img_item);
             textView_price = (TextView) v.findViewById(R.id.textView_price);
+            textView_link = (TextView) v.findViewById(R.id.textView_link);
+            textView_imgTitle = (TextView) v.findViewById(R.id.textView_imgTitle);
+
+            textView_link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
         }
     }
 
@@ -57,13 +67,17 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
     @Override
     public void onBindViewHolder(ItemViewHolder itemHolder, final int position) {
         itemHolder.imageView.setTag(position);
+        itemHolder.textView_price.setTag(position);
+        itemHolder.textView_link.setTag(position);
+        itemHolder.textView_imgTitle.setTag(position);
         Item item = items.get(position);
-        Uri uri = Uri.parse( _path_imgs + item.getImage());
-        itemHolder.imageView.setImageURI(uri);
+        Log.d("titulo: ", item.getTitle());
+        Log.d("posicion: ", ""+position);
+        itemHolder.imageView.setImageResource(item.getImage());
 
         itemHolder.imageView.setContentDescription(item.getTitle());
-        itemHolder.imageView.setImageResource(R.drawable.img_item);
-        itemHolder.textView_price.setText("$ " + item.getPrice().toString());
+        itemHolder.textView_price.setText("Price:  $ " + item.getPrice().toString());
+        itemHolder.textView_imgTitle.setText(item.getTitle());
     }
 
     @Override

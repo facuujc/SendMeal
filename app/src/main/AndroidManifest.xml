@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_sm_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ItemListActivity"></activity>
+        <activity
+            android:name=".ItemListActivity"
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".CreateItemActivity"
             android:parentActivityName=".HomeActivity" />

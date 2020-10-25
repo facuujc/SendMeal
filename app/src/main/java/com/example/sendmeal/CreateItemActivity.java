@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.example.sendmeal.model.Item;
 
+import java.util.Objects;
+
 public class CreateItemActivity extends AppCompatActivity {
 
     EditText editText_title;
@@ -41,6 +43,8 @@ public class CreateItemActivity extends AppCompatActivity {
         btn_save = (Button) findViewById(R.id.btn_saveItem);
         toolbar = (Toolbar) findViewById(R.id.toolbar_createItem);
         setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         //Listeners
         editText_title.addTextChangedListener(new TextWatcher() {
@@ -112,7 +116,7 @@ public class CreateItemActivity extends AppCompatActivity {
                         editText_description.getText().toString(),
                         Double.parseDouble(editText_price.getText().toString()),
                         Integer.parseInt(editText_calories.getText().toString()),
-                        "");
+                        R.drawable.img_item);
 
                 Toast.makeText(CreateItemActivity.this, getString(R.string.msg_item_created), Toast.LENGTH_LONG).show();
             }
@@ -121,18 +125,8 @@ public class CreateItemActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_go_back, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item_goBack:
-                onBackPressed();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

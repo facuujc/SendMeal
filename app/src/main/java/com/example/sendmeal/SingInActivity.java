@@ -33,6 +33,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Objects;
 
 public class SingInActivity extends AppCompatActivity {
 
@@ -67,6 +68,11 @@ public class SingInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sing_in);
 
+        toolbar = (Toolbar) findViewById(R.id.toolbar_singIn);
+        setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         editTxt_name = (EditText) findViewById(R.id.editText_name);
         editTxt_pass = (EditText) findViewById(R.id.editText_pass);
         editTxt_passRepeat = (EditText) findViewById(R.id.editText_pass_repeat);
@@ -83,8 +89,6 @@ public class SingInActivity extends AppCompatActivity {
         checkBox_tnc = (CheckBox) findViewById(R.id.checkBox_tnc);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         btn_register = (Button) findViewById(R.id.btn_register);
-        toolbar = (Toolbar) findViewById(R.id.toolbar_createItem);
-        setSupportActionBar(toolbar);
 
         initialCredit = 0.0;
 
@@ -198,19 +202,9 @@ public class SingInActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_go_back, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item_goBack:
-                onBackPressed();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private boolean validateEmail(String email) {

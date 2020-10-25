@@ -8,19 +8,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 
 import com.example.sendmeal.adapters.ItemRecyclerAdapter;
 import com.example.sendmeal.data.RepositoryInMemory;
+
+import java.util.Objects;
 
 public class ItemListActivity extends AppCompatActivity {
 
     Toolbar toolbar;
 
-    RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
-    RecyclerView.LayoutManager layoutManager;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     RepositoryInMemory repository;
 
@@ -32,6 +33,10 @@ public class ItemListActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar_listItem);
         setSupportActionBar(toolbar);
 
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
         this.repository = new RepositoryInMemory();
 
         this.recyclerView = (RecyclerView) findViewById(R.id.recycler_items);
@@ -42,21 +47,12 @@ public class ItemListActivity extends AppCompatActivity {
 
         this.adapter = new ItemRecyclerAdapter(this.repository.list(), this);
         this.recyclerView.setAdapter(this.adapter);
+        Log.d("tituloA: ", this.repository.list().get(1).getTitle());
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_go_back, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item_goBack:
-                onBackPressed();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

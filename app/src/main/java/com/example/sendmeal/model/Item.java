@@ -7,12 +7,12 @@ public class Item {
     private String description;
     private Double price;
     private Integer calories;
-    private String image;
+    private int image;
 
     public Item() {
     }
 
-    public Item(String title, String description, Double price, Integer calories, String image) {
+    public Item(String title, String description, Double price, Integer calories, int image) {
         this.title = title;
         this.description = description;
         this.price = price;
@@ -52,11 +52,11 @@ public class Item {
         this.calories = calories;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 }
